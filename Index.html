@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>For Jinal ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap');
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090711;color:#fff;font-family:Montserrat,Arial}
+#stars,#fx{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.stage{position:relative;width:100%;height:100%;z-index:1;background:radial-gradient(circle at 18% 18%,#d9a86b25,transparent 25%),radial-gradient(circle at 82% 72%,#b5658d20,transparent 30%),radial-gradient(ellipse at 50% 8%,#593b59,#25172d 48%,#090711)}
+.nav{position:absolute;opacity:0;pointer-events:none}
+.scene{display:none;position:absolute;inset:0;padding:16px;align-items:center;justify-content:center;text-align:center}
+#s0:checked~.stage .scene-0,#s1:checked~.stage .scene-1,#s2:checked~.stage .scene-2,#s3:checked~.stage .scene-3,#s4:checked~.stage .scene-4,#s5:checked~.stage .scene-5,#s6:checked~.stage .scene-6,#s7:checked~.stage .scene-7,#s8:checked~.stage .scene-8{display:flex;animation:enter .65s ease both}
+#s5:checked~.stage{background:radial-gradient(circle at 50% 18%,#fff1b344,transparent 24%),radial-gradient(ellipse at 50% 10%,#6b5f89,#443a64 40%,#171427 90%)}
+#s6:checked~.stage,#s7:checked~.stage,#s8:checked~.stage{background:radial-gradient(circle at 20% 25%,#7652aa33,transparent 25%),radial-gradient(circle at 80% 70%,#2475b833,transparent 30%),radial-gradient(ellipse at 50% 40%,#182a62,#080819 48%,#020207 100%)}
+.card{width:min(720px,94vw);max-height:94vh;overflow:auto;padding:28px 19px;border-radius:32px;border:1px solid #ffe0a155;background:linear-gradient(135deg,#ffffff12,#ffffff05);backdrop-filter:blur(14px);box-shadow:0 22px 90px #0008,0 0 70px #f2b65c18}
+.ey{color:#ffd98d;letter-spacing:3px;text-transform:uppercase;font-size:.68rem}h1,h2{font-family:"Cormorant Garamond",serif;margin:9px 0;text-shadow:0 0 28px #ffd27a77}h1{font-size:clamp(2.2rem,9vw,4.8rem);line-height:1;color:#fff1d8}h2{font-size:clamp(1.8rem,7vw,3.5rem);color:#ffd786}p{line-height:1.62;font-size:clamp(.9rem,3.5vw,1.08rem);max-width:590px;margin:9px auto}.gold{color:#ffd98d}
+.btn,.env{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;position:relative;z-index:20}
+.btn{border:1px solid #ffe1a4;background:linear-gradient(100deg,#a85f76,#d49d49);color:#fff;padding:13px 22px;border-radius:999px;margin:14px 3px 2px;box-shadow:0 8px 30px #0005}
+.env{font-size:3.3rem;width:145px;height:105px;border-radius:22px;background:linear-gradient(145deg,#ffe6aa,#b77a35);box-shadow:0 0 60px #ffd46aaa;animation:pulse 2s infinite}
+.flower-scene{position:relative;width:min(340px,82vw);height:270px;margin:0 auto 6px;border-radius:45% 45% 35% 35%;background:radial-gradient(circle at 50% 8%,#fff3c833,transparent 30%),radial-gradient(circle at 50% 75%,#ffb7cc22,transparent 40%)}
+.flower-wrap{position:absolute;left:50%;bottom:2px;width:190px;height:220px;transform:translateX(-50%)}.stem{position:absolute;left:92px;bottom:0;width:8px;height:105px;background:linear-gradient(90deg,#315b36,#6fa85a,#244c2d);border-radius:10px;transform:rotate(4deg)}.leaf{position:absolute;width:54px;height:25px;background:linear-gradient(135deg,#3c7d47,#87bd66);border-radius:100% 0 100% 0;bottom:42px;left:45px;transform:rotate(-28deg)}.leaf.r{left:94px;bottom:64px;transform:rotate(31deg) scaleX(-1)}
+.flower-head{position:absolute;left:50%;bottom:78px;width:150px;height:150px;transform:translateX(-50%);animation:bloom 4s ease-in-out infinite}.petal{position:absolute;left:50%;top:50%;width:55px;height:78px;transform-origin:50% 100%;border-radius:55% 55% 48% 48%;background:radial-gradient(circle at 50% 20%,#fff6fb,#ffd0e0 30%,#ee8fb2 68%,#c95a88);box-shadow:inset 0 0 15px #fff8,0 0 18px #ffb1c955}.p1{transform:translate(-50%,-100%) rotate(0)}.p2{transform:translate(-50%,-100%) rotate(45deg)}.p3{transform:translate(-50%,-100%) rotate(90deg)}.p4{transform:translate(-50%,-100%) rotate(135deg)}.p5{transform:translate(-50%,-100%) rotate(180deg)}.p6{transform:translate(-50%,-100%) rotate(225deg)}.p7{transform:translate(-50%,-100%) rotate(270deg)}.p8{transform:translate(-50%,-100%) rotate(315deg)}.center{position:absolute;left:50%;top:50%;width:43px;height:43px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#ffe99b,#e9ad42 58%,#a56a23);box-shadow:0 0 28px #ffd66d88;z-index:2}
+.droplet{position:absolute;left:50%;top:0;z-index:5;width:25px;height:35px;transform:translateX(-50%) rotate(45deg);border-radius:60% 45% 60% 60%;background:radial-gradient(circle at 30% 25%,#fff 0 12%,#d9f6ff 18%,#82c8e8 55%,#3b8ec0);box-shadow:0 0 28px #a8eaff;animation:drop 3.8s cubic-bezier(.25,.7,.35,1) infinite}.droplet:after{content:'';position:absolute;width:7px;height:10px;border-radius:50%;background:#fff;opacity:.75;left:5px;top:4px}.ripple{position:absolute;left:50%;bottom:73px;width:55px;height:13px;border:2px solid #c8efff99;border-radius:50%;transform:translateX(-50%) scale(.3);animation:ripple 3.8s ease-out infinite}
+.nebula{position:absolute;width:65vw;height:40vw;max-width:700px;border-radius:50%;background:radial-gradient(ellipse,#a353aa44,#5a55c633 38%,transparent 70%);filter:blur(18px);left:18%;top:12%;animation:drift 9s infinite alternate}.planet{position:absolute;border-radius:50%;width:110px;height:110px;right:8%;top:12%;background:radial-gradient(circle at 30% 30%,#9bc3ff,#4c4c99 42%,#161735 72%);box-shadow:0 0 45px #557fff55}.big{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,9vw,5rem);color:#ffe18e;text-shadow:0 0 45px #ffcf54}.no{color:#ff849b}.wish{font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,5vw,2rem);color:#fff1c5;text-shadow:0 0 28px #ffd56d88}
+.secret-box{display:none;margin:12px auto;padding:16px;border-radius:20px;border:1px solid #ffd88955;background:#251b3488}.secret-title{font-family:"Cormorant Garamond";font-size:2rem;color:#ffe0a0}.secret-reveal{display:none;color:#ffe2a2;margin-top:10px}#secret:checked~.stage .secret-box{display:block}#reveal:checked~.stage .secret-reveal{display:block}
+@keyframes enter{from{opacity:0;transform:scale(1.025)}to{opacity:1;transform:none}}@keyframes pulse{50%{transform:scale(1.1);opacity:.7}}@keyframes bloom{50%{transform:translateX(-50%) scale(1.06)}}@keyframes drop{0%{top:0;opacity:0}15%{opacity:1}55%{top:115px}65%,100%{top:115px;opacity:0}}@keyframes ripple{0%,55%{opacity:0;transform:translateX(-50%) scale(.3)}70%{opacity:1}100%{opacity:0;transform:translateX(-50%) scale(1.7)}}@keyframes drift{to{transform:translate(8vw,5vh) scale(1.15)}}
+
+/* Celebration layer: every chapter feels like a royal birthday */
+.scene:before,.scene:after{content:"";position:absolute;pointer-events:none;z-index:0}
+.scene:before{inset:0;background:
+radial-gradient(circle at 12% 18%,#ffd56d 0 2px,transparent 3px),
+radial-gradient(circle at 88% 22%,#ff9fbd 0 3px,transparent 4px),
+radial-gradient(circle at 18% 78%,#9ed9ff 0 2px,transparent 3px),
+radial-gradient(circle at 82% 76%,#ffeab0 0 2px,transparent 3px);
+animation:twinkle 2.2s ease-in-out infinite alternate}
+.scene:after{width:190px;height:190px;left:50%;top:6%;transform:translateX(-50%);border-radius:50%;
+background:repeating-conic-gradient(from 0deg,#ffd76a 0 2deg,transparent 2deg 16deg);
+filter:blur(.2px);opacity:.18;animation:spin 20s linear infinite}
+.card{position:relative;z-index:2}
+.crown{font-size:clamp(2rem,7vw,3.5rem);filter:drop-shadow(0 0 18px #ffd76a);margin-bottom:2px}
+.sparkle-row{font-size:1.3rem;letter-spacing:10px;margin:8px 0;animation:float 2.5s ease-in-out infinite}
+.confetti{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.confetti i{position:absolute;width:7px;height:14px;border-radius:4px;opacity:.8;animation:fall linear infinite}
+.confetti i:nth-child(1){left:8%;top:-10%;background:#ffd36b;animation-duration:5s}
+.confetti i:nth-child(2){left:18%;top:-30%;background:#ff9ab5;animation-duration:6.5s}
+.confetti i:nth-child(3){left:32%;top:-15%;background:#9ed9ff;animation-duration:5.7s}
+.confetti i:nth-child(4){left:49%;top:-35%;background:#d6b5ff;animation-duration:7s}
+.confetti i:nth-child(5){left:67%;top:-20%;background:#ffe9a6;animation-duration:5.2s}
+.confetti i:nth-child(6){left:81%;top:-38%;background:#ff9ab5;animation-duration:6s}
+.confetti i:nth-child(7){left:92%;top:-12%;background:#8ff0c4;animation-duration:6.8s}
+.fireburst{position:absolute;width:120px;height:120px;border-radius:50%;pointer-events:none;z-index:1;opacity:.7;background:repeating-conic-gradient(from 0deg,#ffd56d 0 3deg,transparent 3deg 14deg);mask:radial-gradient(circle,transparent 0 18%,#000 20% 22%,transparent 24% 100%);animation:burst 2.4s ease-in-out infinite}
+.fireburst.a{left:-25px;top:14%}.fireburst.b{right:-25px;bottom:12%;animation-delay:1.2s}
+.rose-corner{position:absolute;font-size:2rem;z-index:2;filter:drop-shadow(0 0 10px #ff7fa8);animation:float 3s ease-in-out infinite}
+.rose-corner.l{left:5%;bottom:6%}.rose-corner.r{right:5%;top:8%;animation-delay:1.1s}
+.scene-0 .card,.scene-5 .card,.scene-8 .card{box-shadow:0 0 22px #ffd56d55,0 22px 90px #0008,0 0 80px #f2b65c22}
+.scene-8 .card{border-color:#ffd76aaa;background:linear-gradient(135deg,#ffffff16,#fff0c40a)}
+@keyframes fall{to{transform:translateY(115vh) rotate(720deg);opacity:0}}
+@keyframes twinkle{to{filter:brightness(1.5);opacity:.55}}
+@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+@keyframes burst{50%{transform:scale(1.18);opacity:1}100%{transform:scale(.85);opacity:.35}}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+
+/* Upward firecracker rockets: launch from the bottom, then burst in the sky */
+.rocket{position:absolute;bottom:-25px;width:4px;height:42px;border-radius:50%;
+background:linear-gradient(to top,#ff9f7a,#fff4bd,#ffd15a);box-shadow:0 0 14px #ffd15a,0 10px 25px #ff8a66;z-index:1;animation:launch 4.8s cubic-bezier(.25,.65,.35,1) infinite}
+.rocket:before{content:"";position:absolute;left:50%;bottom:-40px;width:2px;height:48px;transform:translateX(-50%);background:linear-gradient(to bottom,transparent,#ffd15a,#ff8d75,transparent);filter:blur(1px)}
+.rocket:after{content:"✦";position:absolute;left:50%;top:-35px;transform:translateX(-50%);font-size:28px;color:#fff4b5;text-shadow:0 0 10px #ffd56d,0 0 28px #ff8fb0;opacity:0;animation:explode 4.8s ease-out infinite}
+.rocket.r1{left:7%;animation-delay:0s}.rocket.r2{left:24%;animation-delay:1.1s}.rocket.r3{right:22%;animation-delay:2.3s}.rocket.r4{right:7%;animation-delay:3.3s}
+.rocket.r2:after{color:#ffb1cb}.rocket.r3:after{color:#bce7ff}.rocket.r4:after{color:#ffe9a0}
+@keyframes launch{0%{bottom:-40px;opacity:0;transform:translateX(0) scaleY(.7)}8%{opacity:1}48%{bottom:70%;opacity:1;transform:translateX(12px) scaleY(1.15)}55%{bottom:72%;opacity:0;transform:translateX(15px) scaleY(.2)}100%{bottom:72%;opacity:0}}
+@keyframes explode{0%,48%{opacity:0;transform:translateX(-50%) scale(.2)}55%{opacity:1;transform:translateX(-50%) scale(1.9) rotate(25deg)}66%{opacity:.85;transform:translateX(-50%) scale(1.1) rotate(90deg)}78%,100%{opacity:0;transform:translateX(-50%) scale(.35) rotate(150deg)}}
+
+
+/* V17 FIX: fireworks now genuinely travel from bottom to the TOP of the screen */
+.scene .rocket{
+  position:absolute !important;
+  bottom:-70px !important;
+  width:6px !important;
+  height:58px !important;
+  z-index:12 !important;
+  opacity:0;
+  pointer-events:none;
+  background:linear-gradient(to top,#ff5f55 0%,#ffb347 35%,#fff8bd 70%,#ffffff 100%) !important;
+  border-radius:50% !important;
+  box-shadow:0 0 12px #fff,0 0 28px #ffb347,0 14px 32px #ff6655 !important;
+  animation:rocketToSky 5.5s ease-in infinite !important;
+}
+.scene .rocket:before{
+  content:"" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:42px !important;
+  width:4px !important;
+  height:115px !important;
+  transform:translateX(-50%) !important;
+  background:linear-gradient(to bottom,#ffd35a,rgba(255,120,70,.75),transparent) !important;
+  filter:blur(1.5px) !important;
+  opacity:.95 !important;
+}
+.scene .rocket:after{
+  content:"✦" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:-70px !important;
+  transform:translateX(-50%) scale(.1) !important;
+  width:100px !important;
+  height:100px !important;
+  text-align:center !important;
+  line-height:100px !important;
+  font-size:82px !important;
+  color:#fff4b5 !important;
+  text-shadow:
+    0 0 8px #fff,
+    25px 0 8px #ffd35a,
+    -25px 0 8px #ff9ab5,
+    0 25px 8px #9ed9ff,
+    0 -25px 8px #d6b5ff !important;
+  opacity:0 !important;
+  animation:skyBurst 5.5s ease-in infinite !important;
+}
+.scene .rocket.r1{left:8% !important;animation-delay:0s !important}
+.scene .rocket.r2{left:30% !important;animation-delay:1.35s !important}
+.scene .rocket.r3{right:30% !important;animation-delay:2.7s !important}
+.scene .rocket.r4{right:8% !important;animation-delay:4.05s !important}
+
+@keyframes rocketToSky{
+  0%{bottom:-90px;opacity:0;transform:translateX(0) scaleY(.75)}
+  8%{opacity:1}
+  50%{bottom:calc(82% - 70px);opacity:1;transform:translateX(18px) scaleY(1.2)}
+  56%{bottom:calc(84% - 70px);opacity:0;transform:translateX(22px) scaleY(.25)}
+  100%{bottom:calc(84% - 70px);opacity:0}
+}
+@keyframes skyBurst{
+  0%,48%{opacity:0;transform:translateX(-50%) scale(.1) rotate(0)}
+  52%{opacity:1;transform:translateX(-50%) scale(1.45) rotate(20deg)}
+  60%{opacity:1;transform:translateX(-50%) scale(2.15) rotate(55deg)}
+  72%{opacity:.65;transform:translateX(-50%) scale(1.5) rotate(110deg)}
+  84%,100%{opacity:0;transform:translateX(-50%) scale(.3) rotate(180deg)}
+}
+
+
+/* V18 ROBUST iOS FIREWORK FIX — actual rockets remain visible throughout the flight */
+.scene{overflow:hidden}
+
+.scene .rocket{
+  display:block !important;
+  position:absolute !important;
+  bottom:0 !important;
+  width:5px !important;
+  height:52px !important;
+  z-index:40 !important;
+  opacity:1 !important;
+  background:linear-gradient(to top,#ff704f,#ffb84d 45%,#fffbd1 78%,#fff) !important;
+  border-radius:50% 50% 45% 45% !important;
+  box-shadow:0 0 8px #fff,0 0 20px #ffd05a !important;
+  animation:riseAcrossScreen 5.6s linear infinite !important;
+}
+
+.scene .rocket:before{
+  content:"" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:42px !important;
+  width:3px !important;
+  height:95px !important;
+  transform:translateX(-50%) !important;
+  background:linear-gradient(to bottom,#fff4a8,#ffb04f,#ff6e5b,transparent) !important;
+  opacity:1 !important;
+  filter:none !important;
+}
+
+.scene .rocket:after{
+  content:"✦" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:-54px !important;
+  width:90px !important;
+  height:90px !important;
+  line-height:90px !important;
+  text-align:center !important;
+  transform:translateX(-50%) scale(.15) !important;
+  font-size:76px !important;
+  color:#fff7c2 !important;
+  opacity:0 !important;
+  text-shadow:
+    0 0 7px #fff,
+    18px 0 7px #ffd45e,
+    -18px 0 7px #ff93ba,
+    0 18px 7px #91d7ff,
+    0 -18px 7px #e0b7ff !important;
+  animation:burstAtTop 5.6s ease-out infinite !important;
+}
+
+.scene .rocket.r1{left:6% !important;animation-delay:0s !important}
+.scene .rocket.r2{left:27% !important;animation-delay:1.4s !important}
+.scene .rocket.r3{right:27% !important;animation-delay:2.8s !important}
+.scene .rocket.r4{right:6% !important;animation-delay:4.2s !important}
+
+@keyframes riseAcrossScreen{
+  0%{transform:translateY(90px);opacity:0}
+  6%{opacity:1}
+  48%{transform:translateY(-72vh);opacity:1}
+  55%{transform:translateY(-76vh);opacity:0}
+  100%{transform:translateY(-76vh);opacity:0}
+}
+
+@keyframes burstAtTop{
+  0%,46%{opacity:0;transform:translateX(-50%) scale(.1)}
+  50%{opacity:1;transform:translateX(-50%) scale(1.2)}
+  60%{opacity:1;transform:translateX(-50%) scale(2.0) rotate(45deg)}
+  73%{opacity:.7;transform:translateX(-50%) scale(1.45) rotate(100deg)}
+  86%,100%{opacity:0;transform:translateX(-50%) scale(.25) rotate(160deg)}
+}
+
+
+/* V19: REAL 7-STAR FIREWORK EXPLOSION */
+.burst7{
+  position:absolute;
+  top:18%;
+  width:1px;height:1px;
+  z-index:45;
+  pointer-events:none;
+}
+.burst7 i{
+  position:absolute;
+  left:0;top:0;
+  font-style:normal;
+  font-size:24px;
+  color:#fff5bd;
+  opacity:0;
+  text-shadow:0 0 7px #fff,0 0 16px #ffd15a,0 0 28px #ff9ab5;
+  animation:sevenStarBurst 5.6s ease-out infinite;
+}
+.burst7 i:before{content:"✦"}
+.burst7.b1{left:8%;animation-delay:0s}.burst7.b2{left:29%;animation-delay:1.4s}
+.burst7.b3{right:29%;animation-delay:2.8s}.burst7.b4{right:8%;animation-delay:4.2s}
+
+.burst7 i:nth-child(1){--x:0px;--y:-75px}
+.burst7 i:nth-child(2){--x:64px;--y:-42px}
+.burst7 i:nth-child(3){--x:78px;--y:28px}
+.burst7 i:nth-child(4){--x:28px;--y:75px}
+.burst7 i:nth-child(5){--x:-35px;--y:72px}
+.burst7 i:nth-child(6){--x:-78px;--y:20px}
+.burst7 i:nth-child(7){--x:-65px;--y:-48px}
+
+.burst7 i:nth-child(2),.burst7 i:nth-child(5){color:#ff9fbd}
+.burst7 i:nth-child(3),.burst7 i:nth-child(6){color:#aee4ff}
+.burst7 i:nth-child(4){color:#e2c1ff}
+
+@keyframes sevenStarBurst{
+  0%,46%{opacity:0;transform:translate(0,0) scale(.1) rotate(0deg)}
+  49%{opacity:1;transform:translate(0,0) scale(.55) rotate(0deg)}
+  63%{opacity:1;transform:translate(var(--x),var(--y)) scale(1.35) rotate(120deg)}
+  80%{opacity:.75;transform:translate(calc(var(--x)*1.35),calc(var(--y)*1.35)) scale(.8) rotate(250deg)}
+  100%{opacity:0;transform:translate(calc(var(--x)*1.55),calc(var(--y)*1.55)) scale(.2) rotate(360deg)}
+}
+
+</style></head><body>
+<input class="nav" type="radio" name="scene" id="s0" checked><input class="nav" type="radio" name="scene" id="s1"><input class="nav" type="radio" name="scene" id="s2"><input class="nav" type="radio" name="scene" id="s3"><input class="nav" type="radio" name="scene" id="s4"><input class="nav" type="radio" name="scene" id="s5"><input class="nav" type="radio" name="scene" id="s6"><input class="nav" type="radio" name="scene" id="s7"><input class="nav" type="radio" name="scene" id="s8"><input class="nav" type="checkbox" id="secret"><input class="nav" type="checkbox" id="reveal">
+<div id="stars"></div><div id="fx"></div><main class="stage">
+<section class="scene scene-0"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="card"><div class="crown">👑</div><div class="sparkle-row">✦ ✨ ✦</div><p class="ey">A royal celebration awaits</p><h1>Jinal...<br>I have a small problem with your birthday.</h1><p>Every year, people celebrate the fact that you're getting older...</p><p class="gold">But honestly? I don't see it.</p><p>You seem to be aging in reverse.</p><label for="s1" class="env">💌</label></div></section>
+<section class="scene scene-1"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="card"><p class="ey">A little mystery</p><h1>Do you have some secret hack?</h1><p>While the rest of us are negotiating with time...</p><p class="gold">you seem to have convinced it to go backwards.</p><p>If every year makes you even more beautiful, why celebrate you only once a year?</p><p class="gold"><b>Every day deserves to be a celebration of you.</b></p><label for="s2" class="btn">Continue ✨</label></div></section>
+<section class="scene scene-2"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="card"><p class="ey">Morning magic</p><h1>You're like sunlight on water.</h1><p>The way morning sunlight touches water...</p><p class="gold">and suddenly, everything begins to shimmer.</p><p>That's the kind of beautiful you are.</p><label for="s3" class="btn">A small moment of beauty 🌸</label></div></section>
+<section class="scene scene-3"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="card"><div class="flower-scene"><div class="droplet"></div><div class="flower-wrap"><div class="stem"></div><div class="leaf"></div><div class="leaf r"></div><div class="flower-head"><i class="petal p1"></i><i class="petal p2"></i><i class="petal p3"></i><i class="petal p4"></i><i class="petal p5"></i><i class="petal p6"></i><i class="petal p7"></i><i class="petal p8"></i><div class="center"></div></div></div><div class="ripple"></div></div><p class="ey">A flower at dawn • one drop of water</p><h1>You're like the first drop of water resting on a flower at dawn...</h1><p>Gentle. Delicate. Beautiful.</p><p class="gold"><b>A small moment that somehow makes everything around it come alive.</b></p><label for="s4" class="btn">And then there are your eyes... ✨</label></div></section>
+<section class="scene scene-4"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="card"><p class="ey">Lost forever</p><h1>And then there are your eyes...</h1><p>I looked once...</p><p class="gold"><b>and somehow forgot the way back.</b></p><p>Sometimes, you don't just admire beautiful things.</p><p>You get lost in them forever.</p><label for="s5" class="btn">Look toward heaven ☁️</label></div></section>
+<section class="scene scene-5"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="card"><div class="crown">👑</div><p class="ey">A princess from somewhere beyond the clouds</p><h1>Did heaven really send you here?</h1><p>Because an angel descending to Earth would probably look something like you.</p><p>But perhaps calling you an angel is still too ordinary.</p><p class="gold"><b>You make Earth feel a little closer to heaven.</b></p><label for="s6" class="btn">Follow the light into the stars 🌌</label></div></section>
+<section class="scene scene-6"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="nebula"></div><div class="card"><p class="ey">The calculation was wrong</p><p>One in a million? <span class="no">Not enough.</span></p><p>One in a billion? <span class="no">Still not enough.</span></p><p>One in a trillion? <span class="no">Nope.</span></p><h1 class="big">ONE IN THE ENTIRE MULTIVERSE.</h1><p class="gold">One in trillion lagdi kamaal di...</p><label for="s7" class="btn">Leave Earth behind 🌠</label></div></section>
+<section class="scene scene-7"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="nebula"></div><div class="planet"></div><div class="card"><p class="ey">Beyond this galaxy</p><h1>Imagine infinite universes...</h1><p>Millions of worlds. Billions of stars. Endless possibilities.</p><p>But even across infinite universes...</p><p class="gold"><b>I think I would still search for you.</b></p><p>Because some people are impossible to replace.</p><h2>There would still only be one Jinal.</h2><label for="s8" class="btn">One final star ✨</label></div></section>
+<section class="scene scene-8"><div class="burst7 b1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="burst7 b4"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="confetti"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="fireburst a"></div><div class="fireburst b"></div><div class="rocket r1"></div><div class="rocket r2"></div><div class="rocket r3"></div><div class="rocket r4"></div>
+<div class="rose-corner l">🌹</div><div class="rose-corner r">✨</div><div class="nebula"></div><div class="card"><div class="crown">👑</div><div class="sparkle-row">🎆 ✨ 🌹 ✨ 🎆</div><p class="ey">The entire universe celebrates its princess ✦</p><h1>✨ HAPPY BIRTHDAY ✨</h1><h2>JINAL ❤️</h2><p><b>No age can define you, Jinal.</b></p><p>Some people aren't measured by the years they have lived...</p><p class="gold">but by the magic they bring into every moment.</p><p class="wish">May your life be filled with laughter, love, beautiful surprises...</p><p class="wish">and all the happiness in the world. ❤️</p><p>May every dream find its way to you, and every beautiful moment find a reason to stay.</p><p class="gold"><b>May your sky always have stars to wish upon... and shooting stars to make those wishes come true. 🌠</b></p><label for="secret" class="btn">✦ A little secret</label><div class="secret-box"><div class="secret-title">A little secret...</div><p>Maybe I finally understand why time doesn't seem to affect you.</p><label for="reveal" class="btn">Reveal it ✨</label><div class="secret-reveal"><b>Telomerase? 🤫</b><br><small>Or perhaps... some secrets are simply too beautiful to explain.</small></div></div><label for="s0" class="btn">❤️ Replay the Universe ❤️</label></div></section>
+</main></body></html>
